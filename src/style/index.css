@@ -47,9 +47,7 @@ body{
     padding: 1rem;
     border-radius: 1rem;
 }
-.right{
-    flex: 1;
-}
+/*===========left container style=============*/
 .left{
     width: 267px;
     height: 571px;
@@ -97,4 +95,43 @@ body{
 }
 .step-title{
     font-size: 14px;
+}
+/*==============right-container style=========*/
+.right{
+    flex: 1;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    padding-inline: 5rem;
+    padding-top: 2rem;
+}
+.step-container,
+.step-container form{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+.step-container form{
+    gap: 1rem;
+}
+/*============footer style=============*/
+footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+}
+footer button{
+    width: 120px;
+    height: 50px;
+    background-color: var(--marin-blue);
+    font-family: 'ubuntu-500';
+    color: white;
+    font-size: 16px;
+    border-radius: 0.5rem;
+    border: 0;
+}
+.back{
+    background-color: var(--pastel-blue);
+    color: var(--marin-blue);
 }

@@ -1,4 +1,6 @@
 import React from 'react'
+import PersonalInfo from './PersonalInfo'
+import Footer from './Footer'
 
 function App() {
   return (
@@ -36,6 +38,9 @@ function App() {
       </div>
       <div className="right">
         {/* compoents goes here */}
+        <PersonalInfo/>
+        {/* footer goes here */}
+        <Footer/>
       </div>
     </section>
   
