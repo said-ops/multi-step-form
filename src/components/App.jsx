@@ -39,8 +39,8 @@ function App() {
       <div className="right">
         {/* compoents goes here */}
         <PersonalInfo/>
-        {/* footer goes here */}
-        <Footer/>
+        
+        
       </div>
     </section>
   

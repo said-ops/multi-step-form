@@ -37,7 +37,7 @@ body{
     align-items: center;
     background-color: var(--magnolia);
     min-height: 810px;
-    font-family: 'ubuntu-500';
+    font-family: 'ubuntu-400';
 }
 .form-container{
     width: 943px;
@@ -89,7 +89,6 @@ body{
 }
 .step-no{
     color: var(--pastel-blue);
-    font-family: 'ubuntu-400';
     text-transform: uppercase;
     font-size: 12px;
 }
@@ -115,11 +114,44 @@ body{
 .step-container form{
     gap: 1rem;
 }
+.step-heading{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.step-heading h1{
+    font-size: 2rem;
+    font-family: 'ubuntu-700';
+    color: var(--marin-blue);
+}
+.step-heading p{
+    color: var(--cool-gray);
+    line-height: 1.5;
+    font-size: 16px;
+}
+.step-container form input{
+    height: 3rem;
+    border-radius: 0.5rem;
+    border: 0;
+    outline: 0;
+    padding-left: 1rem;
+}
+.step-container form span{
+    color: var(--strawberry-red);
+    font-size: 13px;
+    font-style: italic;
+    display: none;
+}
+.error{
+    display: flex;
+    justify-content: space-between;
+}
 /*============footer style=============*/
 footer{
     display: flex;
     justify-content: space-between;
     margin-top: auto;
+    /* width: calc(100% - 5rem); */
 }
 footer button{
     width: 120px;
@@ -131,7 +163,14 @@ footer button{
     border-radius: 0.5rem;
     border: 0;
 }
+footer button:hover{
+    background-color: hsl(213, 62%, 31%);
+    cursor: pointer;
+}
 .back{
     background-color: var(--pastel-blue);
     color: var(--marin-blue);
+}
+.back:hover{
+    background-color: hsl(228, 83%, 73%);
 }
