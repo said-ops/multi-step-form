@@ -30,3 +30,71 @@
 *::before{
     box-sizing: border-box;
 }
+/*=============start styling=============*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--magnolia);
+    min-height: 810px;
+    font-family: 'ubuntu-500';
+}
+.form-container{
+    width: 943px;
+    /* height: 604px; */
+    display: flex;
+    background-color: var(--light-blue);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.right{
+    flex: 1;
+}
+.left{
+    width: 267px;
+    height: 571px;
+    background: url(/src/assets/images/bg-sidebar-desktop.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+.step{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--white);
+    padding: 0.5rem;
+}
+.step:hover{
+    border: 1px solid var(--marin-blue);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.step-number{
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--light-blue);
+    border-radius: 50%;
+}
+.step-name{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.step-no{
+    color: var(--pastel-blue);
+    font-family: 'ubuntu-400';
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.step-title{
+    font-size: 14px;
+}
