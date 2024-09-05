@@ -1,27 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import SelectPlan from './SelectPlan'
 import Footer from './Footer'
 import PersonalInfo from './PersonalInfo'
 
 
 function App() {
-  const handleSubmit = (e)=>{
-    e.preventDefault()
-    console.log('submit')
-}
+
+  const [currentStep,setStep]=useState('personal info')
+  
   return (
     <>
     <section className='form-container'>
 
       <div className='left'>
-        <div className="step">
+        <div className={`step ${currentStep==='personal info'&&'current-step'}`}>
           <div className="step-number">1</div>
           <div className="step-name">
             <span className='step-no'>Step 1</span>
             <span className='step-title'>YOUR INFO</span>
           </div>
         </div>
-        <div className="step">
+        <div className={`step ${currentStep==='select plan'&&'current-step'}`}>
           <div className="step-number">2</div>
           <div className="step-name">
             <span className='step-no'>Step 2</span>
@@ -46,10 +45,10 @@ function App() {
 
       <div className="right">
         {/* components goes here */}
-        {/* <PersonalInfo/> */}
-        <SelectPlan/>
+        {currentStep==='personal info'&& <PersonalInfo/>}
+        {currentStep==='select plan'&& <SelectPlan/>}
         {/* footer goes here */}
-        <Footer handleSubmit={handleSubmit}/>
+        <Footer  currentStep={currentStep} setStep={setStep}/>
       </div>
 
     </section>

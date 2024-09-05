@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function SelectPlan() {
+
+    const [selectedCard,setSelected]=useState(null)
+    const handleClickedoption = (index)=>{
+        setSelected(index)
+    }
+    const cards = [{img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo'},
+        {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo'},
+        {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo'},]
+
   return (
     <div className="step-container">
         <div className="step-heading">
@@ -8,30 +17,21 @@ function SelectPlan() {
             <p>You have the option of monthly or yearly billing</p>
         </div>
         <div className="plan-options">
-            <div className="card">
-                <img src="../src/assets/images/icon-arcade.svg" alt="" />
-                <div className="card-body">
-                    <div className="card-title">Arcade</div>
-                    <div className="option-price"> $9/mo </div>
-                    <div className="discount"> 2 months free</div>
-                </div>
-            </div>
-            <div className="card">
-                <img src="../src/assets/images/icon-advanced.svg" alt="" />
-                <div className="card-body">
-                    <div className="card-title">Advanced</div>
-                    <div className="option-price"> $12/mo </div>
-                    <div className="discount"> 2 months free</div>
-                </div>
-            </div>
-            <div className="card">
-                <img src="../src/assets/images/icon-pro.svg" alt="" />
-                <div className="card-body">
-                    <div className="card-title">Pro</div>
-                    <div className="option-price"> $15/mo </div>
-                    <div className="discount"> 2 months free</div>
-                </div>
-            </div>
+            {cards.map((card,index)=>{
+                return(
+                    <div className={`card ${selectedCard===index ? 'selected-card' : ''}` }
+                         key={index} 
+                         onClick={()=>handleClickedoption(index)}
+                    >
+                        <img src={card.img} alt="" />
+                        <div className="card-body">
+                            <div className="card-title">{card.title}</div>
+                            <div className="option-price"> {card.price} </div>
+                            <div className="discount"> 2 months free</div>
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     </div>
   )

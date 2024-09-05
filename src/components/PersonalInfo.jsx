@@ -1,10 +1,6 @@
 import React from 'react'
 
 
-export const handleSubmit = (e)=>{
-    e.preventDefault()
-    console.log('submit')
-}
 function PersonalInfo() {
 
    

@@ -68,8 +68,8 @@ body{
     color: var(--white);
     padding: 0.5rem;
 }
-.step:hover{
-    border: 1px solid var(--marin-blue);
+.current-step{
+    border: 1px solid var(--cool-gray);
     border-radius: 0.5rem;
     cursor: pointer;
 }
@@ -153,9 +153,13 @@ body{
     flex-direction: column;
     width: 9rem;
     gap: 2rem;
-    border: 1px solid var(--marin-blue);
     padding: 1rem;
     border-radius: 1rem;
+    border: 1px solid var(--cool-gray);
+    cursor: pointer;
+}
+.selected-card{
+    border: 1px solid var(--marin-blue);
 }
 .card img{
     width: 3rem;
