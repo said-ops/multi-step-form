@@ -6,9 +6,11 @@ function SelectPlan() {
     const handleClickedoption = (index)=>{
         setSelected(index)
     }
-    const cards = [{img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo'},
+    const cards = [
+        {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo'},
         {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo'},
-        {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo'},]
+        {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo'},
+    ]
 
   return (
     <div className="step-container">
