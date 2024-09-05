@@ -1,6 +1,7 @@
 import React from 'react'
+import { handleSubmit } from './PersonalInfo'
 
-function Footer({handleSubmit}) {
+function Footer() {
   return (
     <footer>
         <button className='back'>Go Back</button>

@@ -1,11 +1,18 @@
 import React from 'react'
-import PersonalInfo from './PersonalInfo'
+import SelectPlan from './SelectPlan'
 import Footer from './Footer'
+import PersonalInfo from './PersonalInfo'
+
 
 function App() {
+  const handleSubmit = (e)=>{
+    e.preventDefault()
+    console.log('submit')
+}
   return (
     <>
     <section className='form-container'>
+
       <div className='left'>
         <div className="step">
           <div className="step-number">1</div>
@@ -36,12 +43,15 @@ function App() {
           </div>
         </div>
       </div>
+
       <div className="right">
-        {/* compoents goes here */}
-        <PersonalInfo/>
-        
-        
+        {/* components goes here */}
+        {/* <PersonalInfo/> */}
+        <SelectPlan/>
+        {/* footer goes here */}
+        <Footer handleSubmit={handleSubmit}/>
       </div>
+
     </section>
   
     </>

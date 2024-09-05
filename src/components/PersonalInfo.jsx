@@ -1,12 +1,13 @@
 import React from 'react'
-import Footer from './Footer'
 
+
+export const handleSubmit = (e)=>{
+    e.preventDefault()
+    console.log('submit')
+}
 function PersonalInfo() {
 
-    const handleSubmit = (e)=>{
-        e.preventDefault()
-        console.log('submit')
-    }
+   
   return (
     <>
         <div className="step-container">
@@ -35,8 +36,6 @@ function PersonalInfo() {
                 <input type="text" name='phone' id='phone' placeholder='e.g. +1 234 567 890' />
             </form>
         </div>
-    {/* footer goes here */}
-        <Footer handleSubmit={handleSubmit}/>
     </>
   )
 }

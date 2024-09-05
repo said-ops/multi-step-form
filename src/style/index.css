@@ -105,6 +105,7 @@ body{
     padding-inline: 5rem;
     padding-top: 2rem;
 }
+/*========personal infos==============*/
 .step-container,
 .step-container form{
     display: flex;
@@ -145,6 +146,40 @@ body{
 .error{
     display: flex;
     justify-content: space-between;
+}
+/*============select plan style===========*/
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 9rem;
+    gap: 2rem;
+    border: 1px solid var(--marin-blue);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+.card img{
+    width: 3rem;
+    height: 3rem;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.card-title{
+    font-family: 'ubuntu-700';
+    color: var(--marin-blue);
+    font-size: 1.2rem;
+}
+.option-price{
+    color: var(--cool-gray);
+}
+.discount{
+    color: var(--marin-blue);
+}
+.plan-options{
+    display: flex;
+    gap: 2rem;
 }
 /*============footer style=============*/
 footer{
