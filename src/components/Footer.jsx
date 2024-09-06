@@ -13,7 +13,7 @@ function Footer({currentStep,setStep}) {
   }
   return (
     <footer>
-        <button className='back' onClick={backStep}>Go Back</button>
+        <button className={`back ${currentStep==='personal info' ? 'hide-back' : ''}`} onClick={backStep}>Go Back</button>
         <button className='next' onClick={handleNextStep} >Next Step</button>
     </footer>
   )

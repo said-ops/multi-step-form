@@ -210,6 +210,9 @@ footer button:hover{
     background-color: var(--pastel-blue);
     color: var(--marin-blue);
 }
+.hide-back{
+    visibility: hidden;
+}
 .back:hover{
     background-color: hsl(228, 83%, 73%);
 }
