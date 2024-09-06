@@ -141,11 +141,17 @@ body{
     color: var(--strawberry-red);
     font-size: 13px;
     font-style: italic;
-    display: none;
+    
 }
 .error{
     display: flex;
     justify-content: space-between;
+}
+.hide-error{
+    display: none;
+}
+.disp-error{
+    display: initial;
 }
 /*============select plan style===========*/
 .card{

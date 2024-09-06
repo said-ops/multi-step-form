@@ -11,7 +11,26 @@ const useInfoStore = create(set=>({
                 phone:phone
             }
     })),
-
+    errorInfo:{errorName:false,errorEmail:false,errorPhone:false},
+    setError:(errorName,errorEmail,errorPhone)=>
+        set(state=>({
+            errorInfo:{
+                ...state.errorInfo,
+                errorName:errorName,
+                errorEmail:errorEmail,
+                errorPhone:errorPhone
+            }
+        })),
+    errorMsg:{nameErrorMsg:'',emailErrorMsg:'',phoneErrorMsg:''},
+    setErrorMsg:(nameErrorMsg,emailErrorMsg,phoneErrorMsg)=>
+        set(state=>({
+            errorMsg:{
+                ...state.errorMsg,
+                nameErrorMsg:nameErrorMsg,
+                emailErrorMsg:emailErrorMsg,
+                phoneErrorMsg:phoneErrorMsg
+            }
+        }))    
 }))
 
 export default useInfoStore

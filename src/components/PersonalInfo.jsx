@@ -1,11 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useInfoStore from '../store/personalInfoStore'
 
 
 function PersonalInfo() {
 
-    const formData = useInfoStore(state=>state.formData)
+    const {name,email,phone} = useInfoStore(state=>state.formData)
     const setFormData = useInfoStore(state=>state.setFormData)
+    const {errorName,errorEmail,errorPhone}=useInfoStore(state=>state.errorInfo)
+    const setError =useInfoStore(state=>state.setError)
+    const {nameErrorMsg,emailErrorMsg,phoneErrorMsg}=useInfoStore(state=>state.errorMsg)
+
+    //handle change for each input
+
+    const handleNameChange = (e)=>{
+        setFormData(e.target.value,email,phone)
+        if(e.target.value!=='')setError(false,errorEmail,errorPhone)
+    }
+    const handleEmailChange = (e)=>{
+        setFormData(name,e.target.value,phone)
+        if(e.target.value!=='')setError(errorName,false,errorPhone)
+    }
+    const handlePhoneChange = (e)=>{
+        setFormData(name,email,e.target.value)
+        if(e.target.value!=='')setError(errorName,errorEmail,false)
+    }
    
   return (
     <>
@@ -18,38 +36,38 @@ function PersonalInfo() {
 
                 <div className='error'>
                     <label htmlFor="name">Name</label>
-                    <span>This field is required</span>
+                    <span className={errorName?'disp-error':'hide-error'}>{nameErrorMsg}</span>
                 </div>
                 <input type="text" 
                        name='name' 
                        id='name' 
                        placeholder='e.g. Stephen King'
-                       value={formData.name}
-                       onChange={e=>setFormData(e.target.value,formData.email,formData.phone)}
+                       value={name}
+                       onChange={e=>handleNameChange(e)}
                        />
 
                 <div className='error'>
                     <label htmlFor="email">Email Address</label>
-                    <span>This field is required</span>
+                    <span className={errorEmail?'disp-error':'hide-error'}>This field is required</span>
                 </div>
                 <input type="text"
                        name='email' 
                        id='email' 
                        placeholder='e.g. stephenking@lorem.com'
-                       value={formData.email}
-                       onChange={e=>setFormData(formData.name,e.target.value,formData.phone)}
+                       value={email}
+                       onChange={e=>handleEmailChange(e)}
                        />
 
                 <div className='error'>
                     <label htmlFor="phone">Phone number</label>
-                    <span>This field is required</span>
+                    <span className={errorPhone?'disp-error':'hide-error'}>This field is required</span>
                 </div>
                 <input type="text"
                        name='phone' 
                        id='phone' 
                        placeholder='e.g. +1 234 567 890' 
-                       value={formData.phone}
-                       onChange={e=>setFormData(formData.name,formData.email,e.target.value)}
+                       value={phone}
+                       onChange={e=>handlePhoneChange(e)}
                        />
             </form>
         </div>
