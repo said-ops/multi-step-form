@@ -17,10 +17,13 @@ const usePlanStore = create(set=>({
                 yearly:yearly
             }
         })),
-        cards : [
-            {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo',yearly:'$90/yr'},
-            {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo',yearly:'$120/yr'},
-            {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo',yearly:'$150/yr'},
-        ]    
+    cards : [
+            {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo',yearly:'$90/yr',added:true},
+            {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo',yearly:'$120/yr',added:false},
+            {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo',yearly:'$150/yr',added:false},
+        ],
+    selectedCard:0,
+    setSelected:index=>set({selectedCard:index})   
+
 }))
 export default usePlanStore

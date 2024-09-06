@@ -1,16 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import usePlanStore from '../store/planStore'
 
 function SelectPlan() {
 
-    const [selectedCard,setSelected]=useState(0)
+    
     const {option,title,price,yearly}=usePlanStore(state=>state.planInfo)
     const setPlanInfo=usePlanStore(state=>state.setPlanInfo)
-    const cards = [
-        {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo',yearly:'$90/yr'},
-        {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo',yearly:'$120/yr'},
-        {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo',yearly:'$150/yr'},
-    ]
+    const cards = usePlanStore(state=>state.cards)
+    const selectedCard=usePlanStore(state=>state.selectedCard)
+    const setSelected=usePlanStore(state=>state.setSelected)
 
     const handleChecked = (e)=>{
         const selected = cards[selectedCard];
