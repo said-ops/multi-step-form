@@ -4,23 +4,25 @@ import usePlanStore from '../store/planStore'
 function SelectPlan() {
 
     const [selectedCard,setSelected]=useState(0)
-    const handleClickedoption = (index)=>{
-        setSelected(index)
-    }
+    const {option,title,price,yearly}=usePlanStore(state=>state.planInfo)
+    const setPlanInfo=usePlanStore(state=>state.setPlanInfo)
     const cards = [
         {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'$9/mo',yearly:'$90/yr'},
         {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'$12/mo',yearly:'$120/yr'},
         {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'$15/mo',yearly:'$150/yr'},
     ]
 
-    const {option,title,price,yearly}=usePlanStore(state=>state.planInfo)
-    const setPlanInfo=usePlanStore(state=>state.setPlanInfo)
-
     const handleChecked = (e)=>{
-        
-        setPlanInfo(!option,cards[selectedCard].title,cards[selectedCard].price,cards[selectedCard].yearly)
-        console.log(option,title,price,yearly)
+        const selected = cards[selectedCard];
+        setPlanInfo(!option,selected.title,selected.price,selected.yearly)
+        console.log(option,selected.title,selected.price,selected.yearly)
     }
+    const handleClickedoption = (index)=>{
+        setSelected(index)
+        const selected = cards[index];
+        setPlanInfo(option,selected.title,selected.price,selected.yearly)
+        console.log(option,selected.title,selected.price,selected.yearly)
+   }
 
   return (
     <div className="step-container">
