@@ -27,7 +27,7 @@ function AddOns() {
                             <span className='card-title'>{a.title}</span>
                             <p>{a.desc}</p>
                         </div>
-                        <div className='addon-price'>{!option?a.price:a.yearly}</div>
+                        <div className='addon-price'>{`+$${!option?a.price:a.yearly}/${!option?'mo':'yr'}`}</div>
                     </div>
                     </label>
                 )

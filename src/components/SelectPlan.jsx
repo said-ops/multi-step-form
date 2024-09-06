@@ -38,7 +38,7 @@ function SelectPlan() {
                         <img src={card.img} alt="" />
                         <div className="card-body">
                             <div className="card-title">{card.title}</div>
-                            <div className="option-price"> {!option?card.price:card.yearly} </div>
+                            <div className="option-price"> {`$${!option?card.price:card.yearly}/${!option?'mo':'yr'}`} </div>
                             {option&&<div className="discount"> 2 months free</div>}
                         </div>
                     </div>
