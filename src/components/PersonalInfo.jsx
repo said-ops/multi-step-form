@@ -48,7 +48,7 @@ function PersonalInfo() {
 
                 <div className='error'>
                     <label htmlFor="email">Email Address</label>
-                    <span className={errorEmail?'disp-error':'hide-error'}>This field is required</span>
+                    <span className={errorEmail?'disp-error':'hide-error'}>{emailErrorMsg}</span>
                 </div>
                 <input type="text"
                        name='email' 
@@ -60,7 +60,7 @@ function PersonalInfo() {
 
                 <div className='error'>
                     <label htmlFor="phone">Phone number</label>
-                    <span className={errorPhone?'disp-error':'hide-error'}>This field is required</span>
+                    <span className={errorPhone?'disp-error':'hide-error'}>{phoneErrorMsg}</span>
                 </div>
                 <input type="text"
                        name='phone' 

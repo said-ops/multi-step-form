@@ -13,11 +13,11 @@ function Footer({currentStep,setStep}) {
 
       let hasNameError = false
       let hasEmailError = false
-      let hasPhoneError = phone===''
+      let hasPhoneError = false
 
       let nameErrorMsg =''
       let emailErrorMsg =''
-      let PhoneErrorMsg = ''
+      let phoneErrorMsg = ''
       //name validation
       if(name===''){
         hasNameError=true
@@ -36,10 +36,19 @@ function Footer({currentStep,setStep}) {
         hasEmailError=true
         emailErrorMsg='Invalid email address'
       }
+      //phone validation
+      if(phone===''){
+        hasPhoneError=true
+        phoneErrorMsg='This field is required'
+      }
+      else if(!/^\+?[1-9]\d{1,14}$/.test(phone)){
+        hasPhoneError=true
+        phoneErrorMsg='Invalid phone number'
+      }
       
       //set the error and its msg
       setError(hasNameError,hasEmailError,hasPhoneError)
-      setErrorMsg(nameErrorMsg,emailErrorMsg,PhoneErrorMsg)
+      setErrorMsg(nameErrorMsg,emailErrorMsg,phoneErrorMsg)
     
       if(!hasNameError&&!hasEmailError&&!hasPhoneError) setStep('select plan')   
     }
