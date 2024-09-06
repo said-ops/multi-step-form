@@ -82,6 +82,11 @@ body{
     border: 2px solid var(--light-blue);
     border-radius: 50%;
 }
+.step-no-selected{
+    background-color: var(--light-gray);
+    color: var(--marin-blue);
+    font-family: 'ubuntu-700';
+}
 .step-name{
     display: flex;
     flex-direction: column;
