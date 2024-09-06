@@ -53,12 +53,13 @@ function Footer({currentStep,setStep}) {
     
       if(!hasNameError&&!hasEmailError&&!hasPhoneError) setStep('select plan')   
     }
-    if(currentStep==='select plan'){setStep('select plan')}
+    if(currentStep==='select plan'){setStep('add ons')}
   }
 
   const backStep = ()=>{
     if(currentStep==='personal info'){setStep('personal info')}
     if(currentStep==='select plan'){setStep('personal info')}
+    if(currentStep==='add ons'){setStep('select plan')}
   }
 
   return (

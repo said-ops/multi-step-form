@@ -243,6 +243,42 @@ body{
 #toggle ~label{
     cursor: pointer;
 }
+/*===========add ons style============*/
+.add-ons{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.item{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    border: 1px solid var(--cool-gray);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.item input{
+    background-color: var(--purplish-blue);
+    width: 1.2rem;
+    height: 1.2rem;
+    outline: 0;
+}
+.selected-item{
+    border: 2px solid var(--purplish-blue);
+}
+.addon-price{
+    margin-left: auto;
+    color: var(--purplish-blue);
+}
+.addon-text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.addon-text p{
+    color: var(--cool-gray);
+}
 /*============footer style=============*/
 footer{
     display: flex;

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import SelectPlan from './SelectPlan'
 import Footer from './Footer'
 import PersonalInfo from './PersonalInfo'
+import AddOns from './AddOns'
 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
             <span className='step-title'>SELECT PLAN</span>
           </div>
         </div>
-        <div className="step">
+        <div className={`step ${currentStep==='add ons'&&'current-step'}`}>
           <div className="step-number">3</div>
           <div className="step-name">
             <span className='step-no'>Step 3</span>
@@ -47,6 +48,7 @@ function App() {
         {/* components goes here */}
         {currentStep==='personal info'&& <PersonalInfo/>}
         {currentStep==='select plan'&& <SelectPlan/>}
+        {currentStep==='add ons'&& <AddOns/>}
         {/* footer goes here */}
         <Footer  currentStep={currentStep} setStep={setStep}/>
       </div>
