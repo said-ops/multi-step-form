@@ -191,6 +191,12 @@ body{
     display: flex;
     gap: 2rem;
 }
+.toggle-container{
+    width: 100%;
+    height: 3rem;
+    background-color: hsl(231deg 73.71% 83.11%);
+    border-radius: 0.5rem;
+}
 /*============footer style=============*/
 footer{
     display: flex;

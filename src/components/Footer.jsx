@@ -9,6 +9,7 @@ function Footer({currentStep,setStep}) {
   const setErrorMsg =useInfoStore(state=>state.setErrorMsg)
 
   const handleNextStep=()=>{
+    //current step personal info
     if(currentStep==='personal info'){
 
       let hasNameError = false
