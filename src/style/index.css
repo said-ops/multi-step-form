@@ -158,6 +158,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 9rem;
+    min-height: 11.5rem;
     gap: 2rem;
     padding: 1rem;
     border-radius: 1rem;
@@ -196,6 +197,51 @@ body{
     height: 3rem;
     background-color: hsl(231deg 73.71% 83.11%);
     border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+#toggle{
+    display: none;
+}
+.toggle-inner{
+    width: 4rem;
+    display: block;
+    height: 2rem;
+    background-color: var(--marin-blue);
+    border-radius: 1.5rem;
+}
+.toggle-button{
+    display: block;
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color: var(--magnolia);
+    border-radius: 2rem;
+    position: absolute;
+    transform: translate(0.2rem, -1.8rem);
+    transition: left 0.3s;
+    box-shadow: inset 11px 0px 5px 1px var(--cool-gray);
+    transition: all 0.5s ease;
+}
+.monthly{
+    color: var(--marin-blue);
+}
+.yearly{
+    color: var(--cool-gray);
+}
+#toggle:checked ~ label .toggle-button{
+    transform: translate(2.2rem, -1.8rem);
+    transition: all 0.5s ease;
+}
+#toggle:checked ~ .yearly{
+    color: var(--marin-blue);
+}
+#toggle:checked ~ .monthly{
+    color: var(--cool-gray);
+}
+#toggle ~label{
+    cursor: pointer;
 }
 /*============footer style=============*/
 footer{
