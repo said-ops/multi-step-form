@@ -279,6 +279,57 @@ body{
 .addon-text p{
     color: var(--cool-gray);
 }
+/*==============finishing up style===========*/
+.recipe{
+    background-color: var(--pastel-blue);
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 1rem;
+}
+.display-plan{
+    display: flex;
+    justify-content: space-between;
+    min-height: 3rem;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid var(--purplish-blue);
+}
+.display-text{
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+.plan-name,
+.plan-price{
+    font-family: 'ubuntu-700';
+    color: var(--marin-blue);
+}
+.change{
+    color: var(--marin-blue);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.display-addons{
+    display: flex;
+    justify-content: space-between;
+    color: var(--cool-gray);
+}
+.addons-price{
+    color: var(--marin-blue);
+}
+.total{
+    display: flex;
+    justify-content: space-between;
+    color: var(--cool-gray);
+    padding-inline: 1rem;
+}
+.total-number{
+    font-family: 'ubuntu-700';
+    color: var(--marin-blue);
+    font-size: 1.5rem;
+}
 /*============footer style=============*/
 footer{
     display: flex;

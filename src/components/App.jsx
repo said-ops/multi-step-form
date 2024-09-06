@@ -3,6 +3,7 @@ import SelectPlan from './SelectPlan'
 import Footer from './Footer'
 import PersonalInfo from './PersonalInfo'
 import AddOns from './AddOns'
+import Summary from './Summary'
 
 
 function App() {
@@ -35,7 +36,7 @@ function App() {
             <span className='step-title'>ADD-ONES</span>
           </div>
         </div>
-        <div className="step">
+        <div className={`step ${currentStep==='finishing up'&&'current-step'}`}>
           <div className="step-number">4</div>
           <div className="step-name">
             <span className='step-no'>Step 4</span>
@@ -49,6 +50,7 @@ function App() {
         {currentStep==='personal info'&& <PersonalInfo/>}
         {currentStep==='select plan'&& <SelectPlan/>}
         {currentStep==='add ons'&& <AddOns/>}
+        {currentStep==='finishing up'&& <Summary/>}
         {/* footer goes here */}
         <Footer  currentStep={currentStep} setStep={setStep}/>
       </div>
