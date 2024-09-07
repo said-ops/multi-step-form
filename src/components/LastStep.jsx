@@ -9,7 +9,7 @@ function LastStep() {
     },[])
   return (
     <div className="thank-container">
-        <img src="../src/assets/images/icon-thank-you.svg" alt="thank you icon" />
+        <img src="/multi-step-form/assets/images/icon-thank-you.svg" alt="thank you icon" />
         <div className="step-container">
             <div className="step-heading">
                 <h1>Thank you!</h1>

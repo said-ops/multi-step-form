@@ -18,9 +18,9 @@ const usePlanStore = create(set=>({
             }
         })),
     cards : [
-            {img:'../src/assets/images/icon-arcade.svg',title:'Arcade',price:'9',yearly:'90',added:true},
-            {img:'../src/assets/images/icon-advanced.svg',title:'Advanced',price:'12',yearly:'120',added:false},
-            {img:'../src/assets/images/icon-pro.svg',title:'Pro',price:'15',yearly:'150',added:false},
+            {img:'/multi-step-form/assets/images/icon-arcade.svg',title:'Arcade',price:'9',yearly:'90',added:true},
+            {img:'/multi-step-form/assets/images/icon-advanced.svg',title:'Advanced',price:'12',yearly:'120',added:false},
+            {img:'/multi-step-form/assets/images/icon-pro.svg',title:'Pro',price:'15',yearly:'150',added:false},
         ],
     selectedCard:0,
     setSelected:index=>set({selectedCard:index})   
