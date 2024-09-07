@@ -1,14 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import SelectPlan from './SelectPlan'
 import Footer from './Footer'
 import PersonalInfo from './PersonalInfo'
 import AddOns from './AddOns'
 import Summary from './Summary'
+import useInfoStore from '../store/personalInfoStore'
 
 
 function App() {
 
-  const [currentStep,setStep]=useState('personal info')
+  const currentStep=useInfoStore(state=>state.currentStep)
+  const setStep=useInfoStore(state=>state.setStep)
   
   return (
     <>

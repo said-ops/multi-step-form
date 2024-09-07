@@ -30,7 +30,9 @@ const useInfoStore = create(set=>({
                 emailErrorMsg:emailErrorMsg,
                 phoneErrorMsg:phoneErrorMsg
             }
-        }))    
+        })),
+        currentStep:'personal info',
+        setStep:(step)=>set({currentStep:step})       
 }))
 
 export default useInfoStore

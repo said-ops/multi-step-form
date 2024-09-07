@@ -1,15 +1,33 @@
 import React from 'react'
 import usePlanStore from '../store/planStore'
 import useAddOnsStore from '../store/addOnsStore'
+import useInfoStore from '../store/personalInfoStore'
 
 function Summary() {
 
-    const planInfo =usePlanStore(state=>state.planInfo)
+    const {option,title,price,yearly} =usePlanStore(state=>state.planInfo)
     const addOns=useAddOnsStore(state=>state.addOns)
+    const setStep=useInfoStore(state=>state.setStep)
 
     const handleClick=()=>{
-        console.log(planInfo)
-        console.log(addOns)
+        setStep('select plan')
+    }
+    const getTotal=()=>{
+        let total=0
+       if(option){
+        total=parseInt(yearly)
+        addOns.map(addOn=>{
+            if(addOn.added) total=total+parseInt(addOn.yearly)
+        })
+       }
+       else if(!option){
+        total=parseInt(price)
+        addOns.map(addOn=>{
+            if(addOn.added) total=total+parseInt(addOn.price)
+        })
+       }
+
+       return total
     }
     
   return (
@@ -21,19 +39,25 @@ function Summary() {
             <div className="recipe">
                 <div className="display-plan">
                     <div className="display-text">
-                        <span className='plan-name'>Arcade(Monthly)</span>
+                        <span className='plan-name'>{`${title}(${!option?'Monthly':'Yearly'})`}</span>
                         <span className='change' onClick={()=>handleClick()}>Change</span>
                     </div>
-                    <span className='plan-price'>+$9/mo</span>
+                    <span className='plan-price'>{`+$${!option?price:yearly}/${!option?'mo':'yr'}`}</span>
                 </div>
-                <div className="display-addons">
-                    <span className='addons-title'>Online service</span>
-                    <span className='addons-price'>+$1/mo</span>
-                </div>
+                {addOns.map((addOn,index)=>{
+                    if(addOn.added){
+                        return(
+                            <div className="display-addons" key={index}>
+                               <span className='addons-title'>{addOn.title}</span>
+                               <span className='addons-price'>{`+$${!option?addOn.price:addOn.yearly}/${!option?'mo':'yr'}`}</span>
+                           </div>
+                           )
+                    }
+                })}
             </div>
             <div className="total">
                     <span className='total-text'>Total(per month)</span>
-                    <div className="total-number">+$12/mo</div>
+                    <div className="total-number">+${getTotal()}/mo</div>
             </div>
     </div>
   )
