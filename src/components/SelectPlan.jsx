@@ -11,6 +11,7 @@ function SelectPlan() {
     const setSelected=usePlanStore(state=>state.setSelected)
 
     const handleChecked = (e)=>{
+        setSelected(selectedCard)
         const selected = cards[selectedCard];
         setPlanInfo(!option,selected.title,selected.price,selected.yearly)
         console.log(option,selected.title,selected.price,selected.yearly)
@@ -20,6 +21,7 @@ function SelectPlan() {
         const selected = cards[index];
         setPlanInfo(option,selected.title,selected.price,selected.yearly)
         console.log(option,selected.title,selected.price,selected.yearly)
+       
    }
 
   return (

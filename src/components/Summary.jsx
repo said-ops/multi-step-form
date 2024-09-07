@@ -1,6 +1,17 @@
 import React from 'react'
+import usePlanStore from '../store/planStore'
+import useAddOnsStore from '../store/addOnsStore'
 
 function Summary() {
+
+    const planInfo =usePlanStore(state=>state.planInfo)
+    const addOns=useAddOnsStore(state=>state.addOns)
+
+    const handleClick=()=>{
+        console.log(planInfo)
+        console.log(addOns)
+    }
+    
   return (
     <div className="step-container">
             <div className="step-heading">
@@ -11,7 +22,7 @@ function Summary() {
                 <div className="display-plan">
                     <div className="display-text">
                         <span className='plan-name'>Arcade(Monthly)</span>
-                        <span className='change'>Change</span>
+                        <span className='change' onClick={()=>handleClick()}>Change</span>
                     </div>
                     <span className='plan-price'>+$9/mo</span>
                 </div>
@@ -23,7 +34,7 @@ function Summary() {
             <div className="total">
                     <span className='total-text'>Total(per month)</span>
                     <div className="total-number">+$12/mo</div>
-                </div>
+            </div>
     </div>
   )
 }
