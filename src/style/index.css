@@ -335,6 +335,38 @@ body{
     color: var(--marin-blue);
     font-size: 1.5rem;
 }
+/*===========Confirming styling============*/
+.confirming{
+    flex: 1;
+    font-size: 2rem;
+    font-family: 'ubuntu-700';
+    color: var(--marin-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dots {
+    display: inline-block;
+  }
+.dots::after {
+    content: '';
+    display: inline-block;
+    animation: dots 1s steps(3, end) infinite;
+  }
+  @keyframes dots {
+    0%, 20% {
+      content: '.';
+    }
+    40% {
+      content: '..';
+    }
+    60% {
+      content: '...';
+    }
+    100% {
+      content: '';
+    }
+  } 
 /*==========Thank you styling==========*/
 .thank-container{
     display: flex;

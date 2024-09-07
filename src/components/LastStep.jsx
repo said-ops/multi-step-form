@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 function LastStep() {
+
+    useEffect(()=>{
+        setTimeout(() => {
+            window.location.reload()
+        }, 5000);
+    },[])
   return (
     <div className="thank-container">
         <img src="../src/assets/images/icon-thank-you.svg" alt="thank you icon" />

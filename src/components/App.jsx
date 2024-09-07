@@ -6,6 +6,7 @@ import AddOns from './AddOns'
 import Summary from './Summary'
 import useInfoStore from '../store/personalInfoStore'
 import LastStep from './LastStep'
+import Confirming from './Confirming'
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   return (
     <>
     <section className='form-container'>
-
+      {/* display cuurent step */}
       <div className='left'>
         <div className={`step ${currentStep==='personal info'&&'current-step'}`}>
           <div className={`step-number ${currentStep==='personal info'&&'step-no-selected'}`}>1</div>
@@ -47,13 +48,14 @@ function App() {
           </div>
         </div>
       </div>
-
+      {/* display step conditionally */}
       <div className="right">
         {/* components goes here */}
         {currentStep==='personal info'&& <PersonalInfo/>}
         {currentStep==='select plan'&& <SelectPlan/>}
         {currentStep==='add ons'&& <AddOns/>}
         {currentStep==='finishing up'&& <Summary/>}
+        {currentStep==='confirming'&& <Confirming/>}
         {currentStep==='thank you'&& <LastStep/>}
         {/* footer goes here */}
         <Footer  currentStep={currentStep} setStep={setStep}/>
