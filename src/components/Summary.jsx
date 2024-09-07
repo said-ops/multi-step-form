@@ -56,8 +56,8 @@ function Summary() {
                 })}
             </div>
             <div className="total">
-                    <span className='total-text'>Total(per month)</span>
-                    <div className="total-number">+${getTotal()}/mo</div>
+                    <span className='total-text'>Total (per {!option?'month':'year'})</span>
+                    <div className="total-number">{`+$${getTotal()}/${!option?'mo':'yr'}`}</div>
             </div>
     </div>
   )
