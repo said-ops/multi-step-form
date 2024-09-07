@@ -30,7 +30,7 @@ function PersonalInfo() {
         <div className="step-container">
             <div className="step-heading">
                 <h1>Personal info</h1>
-                <p>Please provide your name,email adress and phone number</p>
+                <p>Please provide your name,email address and phone number.</p>
             </div>
             <form action="#">
 
@@ -59,7 +59,7 @@ function PersonalInfo() {
                        />
 
                 <div className='error'>
-                    <label htmlFor="phone">Phone number</label>
+                    <label htmlFor="phone">Phone Number</label>
                     <span className={errorPhone?'disp-error':'hide-error'}>{phoneErrorMsg}</span>
                 </div>
                 <input type="text"

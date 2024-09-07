@@ -35,7 +35,7 @@ function App() {
           <div className={`step-number ${currentStep==='add ons'&&'step-no-selected'}`}>3</div>
           <div className="step-name">
             <span className='step-no'>Step 3</span>
-            <span className='step-title'>ADD-ONES</span>
+            <span className='step-title'>ADD-ONS</span>
           </div>
         </div>
         <div className={`step ${currentStep==='finishing up'&&'current-step'}`}>
