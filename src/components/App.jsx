@@ -5,6 +5,7 @@ import PersonalInfo from './PersonalInfo'
 import AddOns from './AddOns'
 import Summary from './Summary'
 import useInfoStore from '../store/personalInfoStore'
+import LastStep from './LastStep'
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
         {currentStep==='select plan'&& <SelectPlan/>}
         {currentStep==='add ons'&& <AddOns/>}
         {currentStep==='finishing up'&& <Summary/>}
+        {currentStep==='thank you'&& <LastStep/>}
         {/* footer goes here */}
         <Footer  currentStep={currentStep} setStep={setStep}/>
       </div>

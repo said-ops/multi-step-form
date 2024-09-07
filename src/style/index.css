@@ -335,6 +335,20 @@ body{
     color: var(--marin-blue);
     font-size: 1.5rem;
 }
+/*==========Thank you styling==========*/
+.thank-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    margin-top: auto;
+}
+.thank-container img{
+    width: 80px;
+    height: 80px;
+}
 /*============footer style=============*/
 footer{
     display: flex;

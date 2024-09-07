@@ -55,6 +55,7 @@ function Footer({currentStep,setStep}) {
     }
     if(currentStep==='select plan'){setStep('add ons')}
     if(currentStep==='add ons')setStep('finishing up')
+    if(currentStep==='finishing up') setStep('thank you')  
   }
 
   const backStep = ()=>{
@@ -62,6 +63,7 @@ function Footer({currentStep,setStep}) {
     if(currentStep==='select plan'){setStep('personal info')}
     if(currentStep==='add ons'){setStep('select plan')}
     if(currentStep==='finishing up'){setStep('add ons')}
+    if(currentStep==='thank you'){setStep('finishing up')}
   }
 
   return (
